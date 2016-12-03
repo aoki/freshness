@@ -1,0 +1,19 @@
+{
+  "name": "pr",
+  "version": "0.1.0",
+  "description": "List pull-requests through organizations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ringohub/pr.git"
+  },
+  "author": "aoki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ringohub/pr/issues"
+  },
+  "homepage": "https://github.com/ringohub/pr#readme"
+}
