@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/ringohub/pr#readme",
   "dependencies": {
-    "next": "1.2.3"
+    "next": "1.2.3",
+    "react-redux": "4.4.6",
+    "redux": "3.6.0",
+    "redux-thunk": "2.1.0"
   }
 }
