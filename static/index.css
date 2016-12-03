@@ -1,6 +1,7 @@
 :root {
   --bg-color: #282A36;
   --fg-color: white;
+  --fg-link: #FF6AC1;
   --fw: 100;
 }
 
@@ -8,8 +9,20 @@ body {
   background-color: var(--bg-color);
   color: var(--fg-color);
   font-family: 'Hiragino Sans', -apple-system, 'BlinkMacSystemFont', '.SFNSDisplay', sans-serif;
+  font-weight: var(--fw);
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
   font-weight: var(--fw);
+}
+
+a {
+  color: var(--fg-link);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+pre {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 200;
+  font-size: 1rem;
 }
