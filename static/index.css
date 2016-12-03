@@ -1,0 +1,15 @@
+:root {
+  --bg-color: #282A36;
+  --fg-color: white;
+  --fw: 100;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-family: 'Hiragino Sans', -apple-system, 'BlinkMacSystemFont', '.SFNSDisplay', sans-serif;
+}
+
+h1 {
+  font-weight: var(--fw);
+}
