@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import Head from '../components/head'
+import Header from '../components/header'
 
 export default () => <div>
-  <Head/>
+  <Header title="Hello Next"/>
   <h1>Hello world!</h1>
   <ul>
     <li><Link href="/about">about</Link></li>
