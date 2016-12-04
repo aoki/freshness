@@ -1,37 +1,32 @@
 import * as ActionType from '../constants/action-types';
 import * as GitHub from '../config/default';
-import request from 'axios';
+import 'isomorphic-fetch';
 
-export function pr() {
-  return {
-    type: 'aaaa'
-  };
-}
+import * as log from '../debug/log'
 
-export function recievePullRequest(prs) {
+export function recievePullRequest(prs, org, repo) {
   return {
     type: ActionType.RECIEVE_PULL_REQUESTS,
-    prs
+    prs, repo
   };
 }
 
 export function getPullRequests(org, repo) {
-  return dispatch => {
-    console.log(GitHub.prsUrl(org, repo));
-    request.get(GitHub.prsUrl(org, repo)).then( res => {
-      console.log('PRS');
-      console.dir(res.data);
-      console.dir(res.data.map(e => {return e.name;}));
-      console.dir(recievePullRequest(res.data.map(e => {return e.name;})));
-      dispatch(recievePullRequest(res.data.map(e => {return e.name;})));
-    }).catch( err => {
-      console.error(err);
-    });
+  return async dispatch => {
+    const res = await fetch(GitHub.prsUrl(org, repo), {headers: {
+      Authorization: `token ${GitHub.GITHUB_TOKEN}`
+    }});
+    const data = await res.json();
+    const action = recievePullRequest(
+      data.map(e => {return e.body;}),
+      org, repo
+    );
+    // dispatch(action);
   };
 }
 
 
-export function recieveRepositories(repos) {
+export function recieveRepositories(repos, org) {
   return {
     type: ActionType.RECIEVE_REPOSITORIES,
     repos
@@ -39,12 +34,13 @@ export function recieveRepositories(repos) {
 }
 
 export function gerRepositories(org) {
-  return dispatch => {
-    console.log(GitHub.reposUrl(org));
-    request.get(GitHub.reposUrl(org)).then( res => {
-      dispatch(recieveRepositories(res.data.map(e => {return e.name;})));
-    }).catch( err => {
-      console.error(err);
-    });
+  return async dispatch => {
+    const res = await fetch(GitHub.reposUrl(org), {headers: {
+      Authorization: `token ${GitHub.GITHUB_TOKEN}`
+    }});
+    const data = await res.json();
+    const action = recieveRepositories(data.map(e => {return e.name;}), org);
+    action.org = org;
+    dispatch(action);
   }
 }

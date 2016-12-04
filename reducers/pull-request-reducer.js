@@ -1,16 +1,13 @@
 import * as ActionTypes from '../constants/action-types';
-import * as log from '../debug/log'
 
-const initialState = {};
+const initialState = { prs: [], orgs: '', repo: ''};
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case ActionTypes.RECIEVE_REPOSITORIES:
-      const repos = {};
-      repos[action.org] = action.repos;
+    case ActionTypes.RECIEVE_PULL_REQUESTS:
       return {
-        ...state,
-        ...repos
+        prs: action.prs,
+        repo: action.repo
       };
     default:
       return state;

@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/ringohub/pr#readme",
   "dependencies": {
+    "axios": "0.15.3",
+    "immutable": "^3.8.1",
+    "isomorphic-fetch": "^2.2.1",
     "next": "1.2.3",
     "react-redux": "4.4.6",
     "redux": "3.6.0",
