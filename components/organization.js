@@ -1,21 +1,44 @@
 import React from 'react'
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+
+import * as PullRequestActions from '../actions/pull-request-actions'
 import Repositories from '../components/repositories'
 
-import * as log from '../debug/log'
+class Oraganization extends React.Component {
 
-export default class Oraganization extends React.Component {
-
-  componentDidMount() {
+  componentWillMount() {
+    this.props.actions.gerRepositories(this.props.org);
   }
 
   render() {
-    // log.container('Oraganization');
-    // console.dir(this.props);
-    return (
-      <div>
-        <h2>{this.props.org}</h2>
-        <Repositories actions={this.props.actions} org={this.props.org} />
-      </div>
-    );
+    const org = this.props.org;
+    const repos = () => {
+      if(this.props.hasOwnProperty(org) && this.props[org].length > 0) {
+        return (
+          <div>
+            <h2>{this.props.org}</h2>
+            <Repositories actions={this.props.actions} repos={this.props[this.props.org]} />
+          </div>
+        );
+      }
+      return <div></div>;
+    }
+
+    return repos();
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return state.Repository;
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: {
+      ...bindActionCreators(PullRequestActions, dispatch)
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Oraganization);

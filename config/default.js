@@ -5,10 +5,8 @@ export default {
     apiEndPoint: '',
     target: {
       // users: ['ringohub'],
-      // organizations: ['dwango', 'dwango-js', 'opentoonz', 'asciidwango', 'nico-opendata']
-      organizations: ['dwango', 'opentoonz']
+      organizations: ['dwango', 'dwango-js', 'opentoonz', 'asciidwango', 'nico-opendata']
     }
-
   }
 }
 

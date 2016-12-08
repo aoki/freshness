@@ -4,42 +4,35 @@ import 'isomorphic-fetch';
 
 import * as log from '../debug/log'
 
-export function recievePullRequest(prs, org, repo) {
-  return {
-    type: ActionType.RECIEVE_PULL_REQUESTS,
-    prs, repo
-  };
-}
-
-export function getPullRequests(org, repo) {
-  return async dispatch => {
-    const res = await fetch(GitHub.prsUrl(org, repo), {headers: {
-      Authorization: `token ${GitHub.GITHUB_TOKEN}`
-    }});
-    const data = await res.json();
-    const action = recievePullRequest(
-      data.map(e => {return e.body;}),
-      org, repo
-    );
-    // dispatch(action);
-  };
-}
-
-
-export function recieveRepositories(repos, org) {
+export function recieveRepositories(repos) {
   return {
     type: ActionType.RECIEVE_REPOSITORIES,
     repos
   }
 }
 
+const authHeader = {headers: {
+  Authorization: `token ${GitHub.GITHUB_TOKEN}`
+}};
+
 export function gerRepositories(org) {
   return async dispatch => {
-    const res = await fetch(GitHub.reposUrl(org), {headers: {
-      Authorization: `token ${GitHub.GITHUB_TOKEN}`
-    }});
-    const data = await res.json();
-    const action = recieveRepositories(data.map(e => {return e.name;}), org);
+
+    const repos = await fetch(GitHub.reposUrl(org), authHeader).then(
+      res => {
+        return res.json();
+      }
+    );
+
+    const prs = (await Promise.all(
+      repos.map(async repo => {
+        const res = await fetch(GitHub.prsUrl(org, repo.name), authHeader)
+        const prs = await res.json();
+        return {pullRequests: prs, repository: repo};
+      })
+    )).filter(e => {return e.pullRequests.length !== 0});
+
+    const action = recieveRepositories(prs);
     action.org = org;
     dispatch(action);
   }

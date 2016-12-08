@@ -5,6 +5,7 @@ import Organization from '../components/organization'
 import config from '../config/default'
 
 export default class Home extends React.Component {
+
   render() {
     // TODO: Add /users
     const orgsDom = config.github.target.organizations.map((org, i) => {

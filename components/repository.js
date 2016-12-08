@@ -7,16 +7,19 @@ import * as PullRequestActions from '../actions/pull-request-actions'
 import * as log from '../debug/log'
 
 class Repository extends Component {
-  componentDidMount() {
-    // console.log(`%cProps ${this.props.repo}`, 'color:red;');
-    // console.dir(this.props);
-    // this.props.actions.getPullRequests(this.props.org, this.props.repo);
+  componentWillMount() {
+    console.log(`%cProps ${this.props.repo.repository.name}`, 'color:red;');
+    console.dir(this.props);
   }
 
   render() {
+    const prs = this.props.repo.pullRequests.map( (pr, i) => {
+      return <li key={i}>{pr.title}</li>;
+    } );
     return (
       <div>
-        <h3 className={style}>{this.props.repo}</h3>
+        <h3>{this.props.repo.repository.name}</h3>
+        <ul>{prs}</ul>
       </div>
     );
   }
