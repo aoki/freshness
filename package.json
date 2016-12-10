@@ -4,8 +4,10 @@
   "description": "List pull-requests through organizations",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next"
+    "test": "ava",
+    "dev": "next",
+    "lint": "xo",
+    "lint:fix": "xo --fix"
   },
   "repository": {
     "type": "git",
@@ -18,12 +20,15 @@
   },
   "homepage": "https://github.com/ringohub/pr#readme",
   "dependencies": {
-    "axios": "0.15.3",
-    "immutable": "^3.8.1",
-    "isomorphic-fetch": "^2.2.1",
+    "ava": "0.17.0",
+    "immutable": "3.8.1",
+    "isomorphic-fetch": "2.2.1",
     "next": "1.2.3",
+    "perchance": "^1.0.1",
+    "react-github-corner": "^0.3.0",
     "react-redux": "4.4.6",
     "redux": "3.6.0",
-    "redux-thunk": "2.1.0"
+    "redux-thunk": "2.1.0",
+    "xo": "^0.17.1"
   }
 }

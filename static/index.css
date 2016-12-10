@@ -10,6 +10,8 @@ body {
   color: var(--fg-color);
   font-family: 'Hiragino Sans', -apple-system, 'BlinkMacSystemFont', '.SFNSDisplay', sans-serif;
   font-weight: var(--fw);
+  margin-left: 50px;
+  margin-right: auto;
 }
 
 h1, h2, h3, h4, h5 {
