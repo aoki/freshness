@@ -1613,21 +1613,27 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-airbnb-base@^10.0.0:
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-10.0.1.tgz#f17d4e52992c1d45d1b7713efbcd5ecd0e7e0506"
-
-eslint-config-airbnb@13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-13.0.0.tgz#688d15d3c276c0c753ae538c92a44397d76ae46e"
+eslint-config-xo-react-space@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-xo-react-space/-/eslint-config-xo-react-space-0.5.0.tgz#29d8c4a6b287a83ac98d809d1941196b4736bc75"
   dependencies:
-    eslint-config-airbnb-base "^10.0.0"
+    eslint-config-xo-react "^0.5.0"
 
 eslint-config-xo-react@0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/eslint-config-xo-react/-/eslint-config-xo-react-0.10.0.tgz#780494298c45163480ba7c805f1304d408964d1d"
 
-eslint-config-xo@0.17.0, eslint-config-xo@^0.17.0:
+eslint-config-xo-react@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-xo-react/-/eslint-config-xo-react-0.5.0.tgz#a17b7f181e4319c9b8b9cb9cdc3d95fa6158a1c7"
+
+eslint-config-xo-space@0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-xo-space/-/eslint-config-xo-space-0.15.0.tgz#1174a376c159afd03295d5a1ca9c488fb5379cd0"
+  dependencies:
+    eslint-config-xo "^0.17.0"
+
+eslint-config-xo@^0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/eslint-config-xo/-/eslint-config-xo-0.17.0.tgz#1e7d4a86bf49179805c4622e832a7b1beeb4e881"
 
