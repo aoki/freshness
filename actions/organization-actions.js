@@ -1,13 +1,13 @@
-import 'isomorphic-fetch';
+import fetch from 'isomorphic-fetch';
 import * as GitHub from '../config/default';
 import * as ActionType from '../constants/action-types';
 
-const recieve = (orgInfo) => {
+const recieve = orgInfo => {
   return {
     type: ActionType.RECIEVE_ORGANIZATION,
     orgInfo
-  }
-}
+  };
+};
 
 const authHeader = {headers: {
   Authorization: `token ${GitHub.GITHUB_TOKEN}`
@@ -19,7 +19,7 @@ export function getOrganization(org) {
     const orgInfo = await res.json();
     const members = await fetch(orgInfo.members_url.replace(/{\/member}/, ''), authHeader);
     const membersInfo = await members.json();
-    const ms = membersInfo.reduce( (acc, e) => {
+    const ms = membersInfo.reduce((acc, e) => {
       acc[e.login] = e;
       return acc;
     }, {});
@@ -27,5 +27,5 @@ export function getOrganization(org) {
     orgInfo.members = ms;
     const action = recieve(orgInfo);
     dispatch(action);
-  }
+  };
 }

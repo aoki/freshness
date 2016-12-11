@@ -1,15 +1,31 @@
-import React from 'react'
+import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import css from 'next/css';
 
 import {maybe} from 'perchance';
 
-import * as PullRequestActions from '../actions/pull-request-actions'
-import * as OrganizationActions from '../actions/organization-actions'
-import Repositories from '../components/repositories'
+import * as PullRequestActions from '../actions/pull-request-actions';
+import * as OrganizationActions from '../actions/organization-actions';
+import Repositories from '../components/repositories';
 
-class Oraganization extends React.Component {
+const avatarStyle = css({
+  width: '32px', height: '32px',
+  borderRadius: '3px',
+  background: 'white',
+  padding: '2px', marginRight: '10px'
+});
+
+class Oraganization extends Component {
+
+  static propTypes() {
+    return {
+      actions: React.PropTypes.objectOf(React.PropTypes.function),
+      orgName: React.PropTypes.string,
+      org: React.PropTypes.object,
+      repo: React.PropTypes
+    };
+  }
 
   componentWillMount() {
     this.props.actions.gerRepositories(this.props.orgName);
@@ -27,23 +43,14 @@ class Oraganization extends React.Component {
       repo =>
         <div>
           <h2><img id="{org}-avatar" className={avatarStyle} src={orgAvatar} alt="{org} avatar"/>{org}</h2>
-          <Repositories actions={this.props.actions} repos={repo} members={members} />
+          <Repositories actions={this.props.actions} repos={repo} members={members}/>
         </div>,
-      _ => <div></div>
+      _ => <div/>
     );
 
     return repos;
   }
 }
-
-const avatarStyle = css({
-  width: '32px',
-  height: '32px',
-  borderRadius: '3px',
-  background: 'white',
-  padding: '2px',
-  marginRight: '10px'
-});
 
 const mapStateToProps = (state, ownProps) => {
   return {repo: state.Repository, org: state.Organization, ...ownProps};

@@ -1,6 +1,5 @@
-import test from 'ava'
-import {freshness} from '../../util/freshness'
-
+import test from 'ava';
+import {freshness} from '../../util/freshness';
 
 test('Freshness test', t => {
   const now = Date();

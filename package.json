@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "ava": "0.17.0",
+    "eslint-config-xo": "0.17.0",
     "eslint-config-xo-react": "0.10.0",
     "eslint-config-xo-react-space": "0.5.0",
     "eslint-config-xo-space": "0.15.0",
@@ -52,6 +53,7 @@
   },
   "xo": {
     "extends": [
+      "xo",
       "xo/esnext",
       "xo-space",
       "xo-react-space"

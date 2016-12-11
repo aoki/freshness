@@ -1,12 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import pk from '../package.json'
-import Header from '../components/header'
-import config from '../config/default'
+
+import Header from '../components/header';
 
 export default () => <div>
-  <Header title="About pr"/>
+  <Header title="About Freshness"/>
+  <p><strong>Freshness</strong> is to keep clean pull requests for development.</p>
   <Link href="/index">Index</Link>
-  <pre>{JSON.stringify(pk, null, ' ')}</pre>
-  <pre>{JSON.stringify(config, null, ' ')}</pre>
-</div>
+</div>;

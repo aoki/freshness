@@ -1,7 +1,12 @@
-import React from 'react'
-import Head from 'next/head'
+import React, {Component, PropTypes} from 'react';
+import Head from 'next/head';
 
-class Header extends React.Component {
+class Header extends Component {
+
+  static propTypes() {
+    return {title: PropTypes.string};
+  }
+
   render() {
     return (
       <Head>
