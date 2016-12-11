@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/ringohub/pr#readme",
   "dependencies": {
-    "ava": "0.17.0",
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
     "next": "1.2.3",
@@ -28,7 +27,19 @@
     "react-github-corner": "^0.3.0",
     "react-redux": "4.4.6",
     "redux": "3.6.0",
-    "redux-thunk": "2.1.0",
-    "xo": "^0.17.1"
+    "redux-thunk": "2.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "xo-react"
+    ]
+  },
+  "devDependencies": {
+    "ava": "0.17.0",
+    "eslint-config-xo": "0.17.0",
+    "eslint-config-xo-react": "0.10.0",
+    "eslint-plugin-react": "6.8.0",
+    "xo": "0.17.1"
   }
 }
