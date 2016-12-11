@@ -37,7 +37,7 @@ class Oraganization extends Component {
     const members = maybe(this.props.org[org]).map(v => v.members);
     const orgAvatar = maybe(this.props.org[org]).map(v => v.avatar_url).unwrap(
       v => v,
-      _ => 'https://octodex.github.com/images/femalecodertocat.png'
+      _ => 'https://octodex.github.com/images/spectrocat.png'
     );
     const repos = maybe(this.props.repo[org]).map(v => v.length > 0 ? v : undefined).unwrap(
       repo =>

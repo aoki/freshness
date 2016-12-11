@@ -67,7 +67,7 @@ class Repository extends Component {
           );
         });
         return (
-          <li key={i}>
+          <li key={i} className="pullrequest">
             <a href={pr.user.html_url} target="_brank">
               <img src={pr.user.avatar_url} className={userAvatar} alt=""/>
             </a>

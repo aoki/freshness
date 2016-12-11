@@ -1,9 +1,25 @@
-:root {
+/*Dark*/
+/*:root {
   --bg-color: #282A36;
   --fg-color: white;
   --fg-link: #FF6AC1;
   --fw: 100;
+  --fresh-color: #5AF78E;
+  --normal-color: #FFEA68;
+  --rotten-color: #FF5C57;
+}*/
+
+/*Light*/
+:root {
+  --bg-color: white;
+  --fg-color: #282A36;
+  --fg-link: #FF6AC1;
+  --fw: 200;
+  --fresh-color: #5AF78E;
+  --normal-color: #FFEA68;
+  --rotten-color: #FF5C57;
 }
+
 
 body {
   background-color: var(--bg-color);
@@ -20,6 +36,10 @@ h1, h2, h3, h4, h5 {
 
 a {
   color: var(--fg-link);
+}
+
+.pullrequest {
+  list-style: none;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
