@@ -43,5 +43,18 @@
     "eslint-config-xo-react": "0.10.0",
     "eslint-plugin-react": "6.8.0",
     "xo": "0.17.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2",
+      "react"
+    ]
+  },
+  "ava": {
+    "bable": "inherit",
+    "require": [
+      "babel-register"
+    ]
   }
 }

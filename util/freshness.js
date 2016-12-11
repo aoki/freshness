@@ -1,7 +1,8 @@
-export const freshness = function(createdAt) {
+import {maybe} from 'perchance';
+
+export const freshness = function(createdAt, from) {
   const c = new Date(createdAt);
-  const diff = new Date() - c;
-  const f = diff / 1000 / 60 / 60 / 24;
-  // console.log(`at: ${c}, diff: ${diff}, days: ${f}`);
-  return f;
+  const now = maybe(from).unwrap(v => new Date(v), _ => new Date());
+  const diff = now.getTime() - c.getTime();
+  return diff / 1000 / 60 / 60 / 24;;
 }
