@@ -5,7 +5,7 @@ List pull requests crossing to multiple organizations.
 
 ```
 git clone https://github.com/ringohub/freshness.git
-npm i
+npm i # or yarn install
 ```
 
 Write configuration file (`config/default.js`).
