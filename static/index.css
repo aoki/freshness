@@ -1,5 +1,5 @@
 /*Dark*/
-/*:root {
+:root {
   --bg-color: #282A36;
   --fg-color: white;
   --fg-link: #FF6AC1;
@@ -7,10 +7,10 @@
   --fresh-color: #5AF78E;
   --normal-color: #FFEA68;
   --rotten-color: #FF5C57;
-}*/
+}
 
 /*Light*/
-:root {
+/*:root {
   --bg-color: white;
   --fg-color: #282A36;
   --fg-link: #FF6AC1;
@@ -18,7 +18,7 @@
   --fresh-color: #5AF78E;
   --normal-color: #FFEA68;
   --rotten-color: #FF5C57;
-}
+}*/
 
 
 body {
