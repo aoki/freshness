@@ -23,8 +23,8 @@
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
     "next": "1.2.3",
-    "perchance": "^1.0.1",
-    "react-github-corner": "^0.3.0",
+    "perchance": "1.0.1",
+    "react-github-corner": "0.3.0",
     "react-redux": "4.4.6",
     "redux": "3.6.0",
     "redux-thunk": "2.1.0"
