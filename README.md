@@ -1,4 +1,6 @@
 # freshness
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/ringohub/freshness.svg)](https://greenkeeper.io/)
 List pull requests crossing to multiple organizations.
 
 ## Setup
