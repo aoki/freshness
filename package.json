@@ -1,9 +1,11 @@
 {
-  "name": "pr",
-  "version": "0.1.0",
+  "name": "freshness",
+  "version": "0.2.0",
   "description": "List pull-requests through organizations",
   "main": "index.js",
   "scripts": {
+    "build": "next build",
+    "start": "next start",
     "test": "ava",
     "dev": "next",
     "lint": "xo",
@@ -22,28 +24,25 @@
   "dependencies": {
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
-    "next": "1.2.3",
+    "next": "2.0.1",
     "perchance": "1.0.1",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
     "react-github-corner": "0.3.0",
-    "react-redux": "4.4.6",
+    "react-redux": "5.0.3",
     "redux": "3.6.0",
-    "redux-thunk": "2.1.0"
+    "redux-thunk": "2.2.0"
   },
   "devDependencies": {
-    "ava": "0.17.0",
-    "eslint-config-xo": "0.17.0",
-    "eslint-config-xo-react": "0.10.0",
+    "ava": "0.18.2",
+    "eslint": "3.19.0",
+    "eslint-config-xo": "0.18.1",
+    "eslint-config-xo-react": "0.11.1",
     "eslint-config-xo-react-space": "0.5.0",
-    "eslint-config-xo-space": "0.15.0",
-    "eslint-plugin-react": "6.8.0",
-    "xo": "0.17.1"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-2",
-      "react"
-    ]
+    "eslint-config-xo-space": "0.16.0",
+    "eslint-plugin-react": "6.10.3",
+    "glob": "7.1.1",
+    "xo": "0.18.1"
   },
   "ava": {
     "bable": "inherit",

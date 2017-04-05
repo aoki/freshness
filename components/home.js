@@ -17,7 +17,7 @@ export default class Home extends React.Component {
       <div>
         <Header title="Freshness Pull Request"/>
         <ul>
-          <li><Link href="/about">about</Link></li>
+          <li><Link prefetch href="/about"><a>about</a></Link></li>
         </ul>
         <h1>Freshness Pull Request</h1>
         {orgsDom}

@@ -7,7 +7,7 @@ import Home from '../components/home';
 const store = configureStore();
 
 export default class extends Component {
-  static getInitialProps() {
+  // static getInitialProps() {
   //   console.log('INITIAL PROPS');
   //   console.dir(ctx.pathname);
   //   console.dir(ctx.query);
@@ -17,7 +17,7 @@ export default class extends Component {
   //   // console.dir(ctx.xhr)
   //   // console.dir(ctx.err);
   //   return {};
-  }
+  // }
 
   render() {
     return (

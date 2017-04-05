@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import css from 'next/css';
 
 import {maybe} from 'perchance';
 
@@ -9,12 +8,12 @@ import * as PullRequestActions from '../actions/pull-request-actions';
 import * as OrganizationActions from '../actions/organization-actions';
 import Repositories from '../components/repositories';
 
-const avatarStyle = css({
+const avatarStyle = {
   width: '32px', height: '32px',
   borderRadius: '3px',
   background: 'white',
   padding: '2px', marginRight: '10px'
-});
+};
 
 class Oraganization extends Component {
 
@@ -42,7 +41,7 @@ class Oraganization extends Component {
     const repos = maybe(this.props.repo[org]).map(v => v.length > 0 ? v : undefined).unwrap(
       repo =>
         <div>
-          <h2><img id="{org}-avatar" className={avatarStyle} src={orgAvatar} alt="{org} avatar"/>{org}</h2>
+          <h2><img id="{org}-avatar" style={avatarStyle} src={orgAvatar} alt="{org} avatar"/>{org}</h2>
           <Repositories actions={this.props.actions} repos={repo} members={members}/>
         </div>,
       _ => <div/>
