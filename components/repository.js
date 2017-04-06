@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import css from 'next/css';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {maybe} from 'perchance';
@@ -15,8 +14,8 @@ const avatarBaseStyle = {
   borderRadius: '2px',
   marginRight: '5px'
 };
-const userAvatar = css(avatarBaseStyle);
-const approvalUserAvatar = css(Map(avatarBaseStyle).set('filter', 'opacity(10%)').toJS());
+const userAvatar = avatarBaseStyle;
+const approvalUserAvatar = Map(avatarBaseStyle).set('filter', 'opacity(10%)').toJS();
 
 class Repository extends Component {
 
@@ -33,14 +32,14 @@ class Repository extends Component {
       (pr, i) => {
         const fresh = maybe(pr.updated_at).map(v => freshness(v).toFixed(2)).unwrap(v => {
           if (v <= 3) {
-            const fresh = css({fontSize: '0.6rem', marginLeft: '10px', color: '#5AF78E'});
-            return <span key={i} className={fresh}>{v} days ago</span>;
+            const fresh = {fontSize: '0.6rem', marginLeft: '10px', color: '#5AF78E'};
+            return <span key={i} style={fresh}>{v} days ago</span>;
           } else if (v <= 5) {
-            const normal = css({fontSize: '0.6rem', marginLeft: '10px', color: '#FFEA68'});
-            return <span key={i} className={normal}>{v} days ago</span>;
+            const normal = {fontSize: '0.6rem', marginLeft: '10px', color: '#FFEA68'};
+            return <span key={i} style={normal}>{v} days ago</span>;
           }
-          const rotten = css({fontSize: '0.6rem', marginLeft: '10px', color: '#FF5C57'});
-          return <span key={i} className={rotten}>{v} days ago</span>;
+          const rotten = {fontSize: '0.6rem', marginLeft: '10px', color: '#FF5C57'};
+          return <span key={i} style={rotten}>{v} days ago</span>;
         }, <span/>);
         const reviewers = applovals(pr.body).map((e, i) => {
           const avatar = members.map(v => v[e.user]).unwrap(
@@ -61,7 +60,7 @@ class Repository extends Component {
           return (
             <span key={i}>
               <a href={avatar.page}>
-                <img className={avatarImage} src={avatar.url} alt={e.user}/>
+                <img style={avatarImage} src={avatar.url} alt={e.user}/>
               </a>
             </span>
           );
@@ -69,10 +68,10 @@ class Repository extends Component {
         return (
           <li key={i} className="pullrequest">
             <a href={pr.user.html_url} target="_brank">
-              <img src={pr.user.avatar_url} className={userAvatar} alt=""/>
+              <img src={pr.user.avatar_url} style={userAvatar} alt=""/>
             </a>
             <a href={pr.html_url} target="_blank">#{pr.number} {pr.title}</a>
-            <span className={css({marginLeft: '10px'})}>{reviewers}</span>
+            <span style={{marginLeft: '10px'}}>{reviewers}</span>
             {fresh}
           </li>
         );
