@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ringohub/pr#readme",
   "dependencies": {
+    "babel-plugin-transform-define": "1.2.0",
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
     "next": "2.0.1",
@@ -56,6 +57,12 @@
       "xo/esnext",
       "xo-space",
       "xo-react-space"
+    ]
+  },
+  "babel": {
+    "presets": ["next/babel"],
+    "plugins": [
+      ["transform-define", "./env-config.js"]
     ]
   }
 }

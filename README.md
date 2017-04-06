@@ -21,6 +21,16 @@ Now, I implementing Auth feature. :bow: :pray:
 npm run dev
 ```
 
+### Environment Variables
+
+| Key                        | Description                                                                                             | Default                  |
+|:---------------------------|:--------------------------------------------------------------------------------------------------------|:-------------------------|
+| FRESHNESS_GITHUB_API_URL   | Specify GitHub or GitHub:Enterprise API URL                                                             | `https://api.github.com` |
+| FRESHNESS_GITHUB_API_TOKEN | Specify GitHub personal access token (**Require**: [Generate here](https://github.com/settings/tokens)) |                          |
+| FRESHNESS_TARGET_ORGS      | Specify GitHub organizations for listing pull requests                                                  | `github,nodejs`          |
+
+
+
 ## Test
 
 ```
