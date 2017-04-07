@@ -9,7 +9,8 @@
     "test": "ava",
     "dev": "next",
     "lint": "xo",
-    "lint:fix": "xo --fix"
+    "lint:fix": "xo --fix",
+    "docker": "docker build -t freshness:$(node -e \"console.log(require('./package.json').version)\") ."
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,9 @@
     "eslint-plugin-react": "6.10.3",
     "glob": "7.1.1",
     "xo": "0.18.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "1.1.1"
   },
   "ava": {
     "bable": "inherit",
