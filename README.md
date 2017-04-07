@@ -21,6 +21,16 @@ Now, I implementing Auth feature. :bow: :pray:
 npm run dev
 ```
 
+### docker
+
+```
+docker run --rm -p 3000:3000 \
+  -e FRESHNESS_GITHUB_API_TOKEN=${FRESHNESS_GITHUB_API_TOKEN} \
+  -e FRESHNESS_GITHUB_API_URL=${FRESHNESS_GITHUB_API_URL} \
+  -e FRESHNESS_TARGET_ORGS=${FRESHNESS_TARGET_ORGS} \
+  -d freshness:0.3.4
+```
+
 ### Environment Variables
 
 | Key                        | Description                                                                                                                                                 | Default                  |

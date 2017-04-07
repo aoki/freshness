@@ -11,7 +11,8 @@ RUN cd /tmp \
   && cd /freshness \
     && yarn --prod --no-progress \
 #    && npm run build \
-    && apk del openssl unzip
+    && apk del openssl unzip \
+    && rm /tmp/v${APP_VERSION}.zip
 
 EXPOSE 3000
 WORKDIR /freshness
