@@ -1,5 +1,5 @@
 {
-  "name": "freshness",
+  "name": "@aoki/freshness",
   "version": "0.3.0",
   "description": "List pull-requests through organizations",
   "main": "index.js",
