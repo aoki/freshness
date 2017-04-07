@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ringohub/pr.git"
+    "url": "git+ssh://git@github.com/ringohub/freshness.git"
   },
   "author": "aoki",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ringohub/pr/issues"
+    "url": "https://github.com/ringohub/freshness/issues"
   },
-  "homepage": "https://github.com/ringohub/pr#readme",
+  "homepage": "https://github.com/ringohub/freshness#readme",
   "dependencies": {
     "babel-plugin-transform-define": "1.2.0",
     "immutable": "3.8.1",
