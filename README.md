@@ -23,11 +23,11 @@ npm run dev
 
 ### Environment Variables
 
-| Key                        | Description                                                                                             | Default                  |
-|:---------------------------|:--------------------------------------------------------------------------------------------------------|:-------------------------|
-| FRESHNESS_GITHUB_API_URL   | Specify GitHub or GitHub:Enterprise API URL                                                             | `https://api.github.com` |
-| FRESHNESS_GITHUB_API_TOKEN | Specify GitHub personal access token (**Require**: [Generate here](https://github.com/settings/tokens)) |                          |
-| FRESHNESS_TARGET_ORGS      | Specify GitHub organizations for listing pull requests                                                  | `github,nodejs`          |
+| Key                        | Description                                                                                                                                                 | Default                  |
+|:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------|
+| FRESHNESS_GITHUB_API_URL   | Specify GitHub or GitHub:Enterprise API URL                                                                                                                 | `https://api.github.com` |
+| FRESHNESS_GITHUB_API_TOKEN | Specify GitHub personal access token (**Require**: [Generate here](https://github.com/settings/tokens)). Need `repo:status` and ` public_repo` permissions. |                          |
+| FRESHNESS_TARGET_ORGS      | Specify GitHub organizations for listing pull requests                                                                                                      | `github,nodejs`          |
 
 
 

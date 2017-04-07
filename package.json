@@ -1,6 +1,6 @@
 {
   "name": "@aoki/freshness",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "List pull-requests through organizations",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "dev": "next",
     "lint": "xo",
     "lint:fix": "xo --fix",
-    "docker": "docker build -t freshness:$(node -e \"console.log(require('./package.json').version)\") ."
+    "docker": "node -e \"console.log(require('./package.json').version)\" | xargs -IXXX docker build --build-arg APP_VERSION=XXX -t freshness:XXX ."
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,6 @@
   "homepage": "https://github.com/ringohub/freshness#readme",
   "dependencies": {
     "babel-plugin-transform-define": "1.2.0",
-    "babel-preset-env": "1.3.2",
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
     "next": "2.0.1",
@@ -62,7 +61,6 @@
   },
   "babel": {
     "presets": [
-      "env",
       "next/babel"
     ],
     "plugins": [
