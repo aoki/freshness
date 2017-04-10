@@ -1,5 +1,5 @@
 import {Provider} from 'react-redux';
-import p from '../package.json'
+import p from '../package.json';
 
 import configureStore from '../stores/store';
 import Home from '../components/home';
@@ -15,9 +15,9 @@ export default class extends React.Component {
     return (
       <div>
         <Provider store={store}>
-          <Home version={this.props.version} />
+          <Home version={this.props.version}/>
         </Provider>
       </div>
-    )
+    );
   }
 }

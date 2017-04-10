@@ -9,4 +9,4 @@ export default () => (
     <p><strong>Freshness</strong> is to keep clean pull requests for development.</p>
     <Link prefetch href="/index"><a>Index</a></Link>
   </div>
-)
+);
