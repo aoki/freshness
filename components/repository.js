@@ -66,14 +66,40 @@ class Repository extends Component {
           );
         });
         return (
-          <li key={i} className="pullrequest">
-            <a href={pr.user.html_url} target="_brank">
-              <img src={pr.user.avatar_url} style={userAvatar} alt=""/>
-            </a>
-            <a href={pr.html_url} target="_blank">#{pr.number} {pr.title}</a>
-            <span style={{marginLeft: '10px'}}>{reviewers}</span>
-            {fresh}
-          </li>
+          <div>
+            <li key={i} className="pullrequest">
+              <a href={pr.user.html_url} target="_brank">
+                <img src={pr.user.avatar_url} style={userAvatar} alt=""/>
+              </a>
+              <a className="prTitle" href={pr.html_url} target="_blank">#{pr.number} {pr.title}</a>
+              <span style={{marginLeft: '10px'}}>{reviewers}</span>
+              {fresh}
+            </li>
+            <style jsx>{`
+              li.pullrequest {
+                margin-bottom: 7px;
+              }
+              li.pullrequest>a.prTitle {
+                text-decoration: none;
+                padding-bottom: 3px;
+                position: relative;
+                display: inline;
+              }
+
+              li.pullrequest>a.prTitle::before {
+                position: absolute;
+                bottom: 1px; left: 0;
+                content: '';
+                transition: .1s;
+                height: 1px;
+                width: 0;
+                background: #FF6AC1;
+              }
+              li.pullrequest>a.prTitle:hover::before {
+                width: 100%;
+              }
+            `}</style>
+          </div>
         );
       }
     )).unwrap(
