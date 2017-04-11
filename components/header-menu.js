@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GithubCorner from 'react-github-corner';
 
 import Header from '../components/header';
+import Conf from '../config/default.js';
 
 const style = <style jsx>{`
   a#title {
@@ -36,7 +37,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <Link href="/index"><a id="title">Freshness <span style={{fontSize: '8pt'}}> v{this.props.version}</span></a></Link>
+        <Link href="/index"><a id="title">Freshness <span style={{fontSize: '8pt'}}> v{this.props.version} {Conf.app.execMode} mode</span></a></Link>
         <input id="filter" type="text" name="search" placeholder="filter keyword"/>
         {style}
       </div>

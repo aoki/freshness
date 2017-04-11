@@ -2,9 +2,13 @@
 global GITHUB_API_TOKEN
 global GITHUB_API_URL
 global TARGET_ORG_LIST
+global EXECUTION_MODE
 */
 
 export default {
+  app: {
+    execMode: EXECUTION_MODE
+  },
   github: {
     target: {
       // Users: ['ringohub'],
