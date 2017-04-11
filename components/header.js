@@ -12,6 +12,9 @@ class Header extends Component {
       <Head>
         <title>{this.props.title}</title>
         <link rel="stylesheet" href="/static/index.css"/>
+        <link rel="icon shortcut" href="/static/favicon.icon" type="image/x-icon"/>
+        <link rel="icon" sizes="any" href="/static/favicon.svg" type="image/svg+xml"/>
+        <link rel="mask-icon" href="/static/favicon.svg"/>
       </Head>
     );
   }
